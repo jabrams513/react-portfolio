@@ -13,10 +13,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import JAProfPic from '../assets/JAProfPic.jpeg';
+import Phoenix from '../assets/Phoenix.jpg'
 import { Link } from 'react-router-dom';
-
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import { green } from '@mui/material/colors';
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -37,24 +36,24 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  const styles = { navLinks: { textDecoration: "none", fontFamily: "Oswald" }, menuLinks: { textDecoration: "none", color: "#800000", fontFamily: "Oswald" } }
+
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <AppBar position="static" sx={{ background: "#800000" }}>
+      <Container maxWidth="xxl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
+          {/* <Avatar alt="Phoenix" src={Phoenix} sx={{ mr: 2 }} /> */}
           <Typography
-            variant="h6"
             noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
+              fontFamily: 'Sixtyfour',
+              fontWeight: 400,
+              letterSpacing: '.1 rem',
+              color: '#d3d3d3',
               textDecoration: 'none',
+              fontSize: "30px"
             }}
           >
             Jonathan Stark Abrams
@@ -67,7 +66,7 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color="d3d3d3"
             >
               <MenuIcon />
             </IconButton>
@@ -86,97 +85,72 @@ function ResponsiveAppBar() {
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: 'block', md: 'flex' },
               }}
             >
-                <Link to = "/"><MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">About</Typography>
-                </MenuItem>
-                </Link>
-                <Link to = "/portfolio"><MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Portfolio</Typography>
-                </MenuItem>
-                </Link>
-                <Link to = "/resume"><MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Resume</Typography>
-                </MenuItem>
-                </Link>
-                <Link to = "/contact"><MenuItem onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Contact</Typography>
-                </MenuItem>
-                </Link>
+              <Link style={styles.menuLinks} to="/"><MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">About</Typography>
+              </MenuItem>
+              </Link>
+              <Link style={styles.menuLinks} to="/portfolio"><MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">Portfolio</Typography>
+              </MenuItem>
+              </Link>
+              <Link style={styles.menuLinks} to="/resume"><MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">Resume</Typography>
+              </MenuItem>
+              </Link>
+              <Link style={styles.menuLinks} to="/contact"><MenuItem onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">Contact</Typography>
+              </MenuItem>
+              </Link>
             </Menu>
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+          {/* <Avatar alt="Phoenix" src={Phoenix} sx={{ mr: 2 }} /> */}
           <Typography
-            variant="h5"
             noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
+              fontFamily: 'Sixtyfour',
+              fontWeight: 400,
+              letterSpacing: '.2 rem',
+              color: '#d3d3d3',
               textDecoration: 'none',
+              fontSize: "15px"
             }}
           >
             Jonathan Stark Abrams
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-          <Link to = "/"><Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              > About
-              </Button></Link>
-              <Link to = "/portfolio"><Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              > Portfolio
-              </Button></Link>
-              <Link to = "/resume"><Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              > Resume
-              </Button></Link>
-              <Link to = "/contact"><Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              > Contact
-              </Button></Link>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: "flex-end" }}>
+            <Link style={styles.navLinks} to="/"><Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            > About
+            </Button></Link>
+            <Link style={styles.navLinks} to="/portfolio"><Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            > Portfolio
+            </Button></Link>
+            <Link style={styles.navLinks} to="/resume"><Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            > Resume
+            </Button></Link>
+            <Link style={styles.navLinks} to="/contact"><Button
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: 'white', display: 'block' }}
+            > Contact
+            </Button></Link>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Jonathan Abrams" src={JAProfPic} />
               </IconButton>
             </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
         </Toolbar>
       </Container>

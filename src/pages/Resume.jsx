@@ -35,23 +35,23 @@ export default function Resume() {
   return (
     <>
       <div className="pb-2 mx-5">
-        <h3 className="pb-2 text-3xl">Resume</h3>
+        <h1>Resume</h1>
         <h6>
           Toggle here to view my{" "}
           <a href="#image" onClick={handleClick} className="underline">
             resume
           </a>{" "}
-          as an image. 
+          as an image.
         </h6>
         Click here to download my{" "}
         <a href="#download" onClick={handleDownload} className="underline">
-          resume as a pdf.
+          resume as a PDF.
         </a>
       </div>
       {showPDF ? (
         <div className="mx-5 flex flex-row">
           <ul className="mx-5">
-            <p className="font-bold"> Front-end Proficiencies</p>
+            <p className="font-bold"> Front-End Proficiencies</p>
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
@@ -63,7 +63,7 @@ export default function Resume() {
             <li>TailwindCSS</li>
           </ul>
           <ul className="mx-5 basis-50">
-            <p className="font-bold"> Back-end Proficiencies</p>
+            <p className="font-bold"> Back-End Proficiencies</p>
             <li>Node</li>
             <li>Express</li>
             <li>MySQL & Sequelize</li>
@@ -73,7 +73,7 @@ export default function Resume() {
           </ul>
         </div>
       ) : (
-        <div className="">
+        <div className="PDFStyle">
           <Document file={PDF} onLoadSuccess={onDocumentLoadSuccess}>
             <Page
               pageNumber={pageNumber}

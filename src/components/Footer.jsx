@@ -1,0 +1,1 @@
+export default function Footer() { return (<footer>Creative Solutions for Your Problems</footer>) }
