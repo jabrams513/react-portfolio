@@ -15,7 +15,7 @@ body {
   background-image: url('./assets/images/Firebird.jpg');
   background-size: 71%;
   background-position: center;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.75);
   background-blend-mode: overlay;
   /* background-repeat: no-repeat; */
 }
