@@ -111,7 +111,7 @@ function ResponsiveAppBar() {
                 <Button
                   onClick={handleCloseNavMenu}
                   className={location.pathname === route.path ? "active link-btn" : "link-btn"}
-                  sx={{ fontFamily: "Oswald", my: 2, color: 'white', display: 'block' }}
+                  sx={{ fontFamily: "Oswald", my: 2, color: '#d3d3d3', display: 'block' }}
                 >
                   {route.label}
                 </Button>

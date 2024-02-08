@@ -91,7 +91,7 @@ export default function Contact() {
                 color: '#D3D3D3',
                 '&:hover': {
                   bgcolor: "rgb(219, 180, 51)",
-                  color: 'BLACK'
+                  color: 'black'
                 }
               }}
             >
