@@ -3,7 +3,7 @@ import JAProfPic from '../assets/images/JAProfPic.png';
 export default function About() {
   return (
     <div>
-      <h1 className="pb-2 mx-5">About</h1>
+      <h1 style={{ textAlign: 'center' }} className="pb-2 mx-5">About</h1>
 
       <div className="img-container">
         <img className="prof-img" src={JAProfPic} />

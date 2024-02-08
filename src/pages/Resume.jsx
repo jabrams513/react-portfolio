@@ -35,7 +35,7 @@ export default function Resume() {
   return (
     <>
       <div className="pb-2 mx-5">
-        <h1>Resume</h1>
+        <h1 style={{ textAlign: 'center' }} className="pb-2 mx-5">Resume</h1>
         <h6>
           Toggle here to view my{" "}
           <a href="#image" onClick={handleClick} className="underline">
