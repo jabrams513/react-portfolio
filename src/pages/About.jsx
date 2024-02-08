@@ -1,4 +1,4 @@
-import JAProfPic from '../assets/images/JAProfPic.jpeg';
+import JAProfPic from '../assets/images/JAProfPic.png';
 
 export default function About() {
   return (
@@ -10,44 +10,56 @@ export default function About() {
       </div>
 
       <p className="about-text">
-        <strong>Introduction:</strong>
-        <p>Greetings! I'm Jonathan Abrams, a passionate web developer dedicated to creating seamless and innovative digital experiences.</p>
 
-        <strong>Professional Background:</strong>
-        <p>With a solid educational foundation in web development, I hold a Certificate in Web Development from the University of Pennsylvania that has equipped me with a deep understanding of the field.</p>
+        <p>
+          Greetings! I'm Jonathan Abrams, a passionate web developer dedicated to crafting seamless and innovative digital experiences.
+        </p>
 
-        <strong>Experience:</strong>
-        <p>Throughout my career, I've had the privilege of working on diverse web development projects. From [mention specific project types], I've honed my skills in [mention relevant skills] and consistently delivered solutions that meet both client and user expectations.</p>
+        <p>
+          My journey in web development began with a solid educational foundation, earning a Certificate in Web Development from the University of Pennsylvania. Complementing this, I hold a BA from The University of Chicago in Comparative Human Development, a field that blends Biology, Psychology, Anthropology, and Sociology to offer a unique perspective on human behavior.
+        </p>
 
-        <strong>Skills:</strong>
-        <p>Proficient in a range of technologies, I specialize in [list programming languages, frameworks, and tools you're proficient in].</p>
+        <p>
+          Throughout my career, I've collaborated with business executives and subject matter experts across diverse projects in finance and technology. This experience has honed not just my technical skills, but also my leadership, project management, and stakeholder engagement abilities. My commitment to delivering solutions that exceed both client and user expectations remains unwavering.
+        </p>
 
-        <strong>Passion and Motivation:</strong>
-        <p>Driven by an unwavering passion for web development, I find joy in [mention specific aspects of web development that inspire you]. This passion fuels my motivation to stay abreast of industry trends and push the boundaries of what's possible.</p>
+        <p>
+          Proficient in a range of technologies, I specialize in the MERN stack while actively seeking opportunities to expand my skill set. Driven by an insatiable passion for web development, I thrive on continuous learning, collaboration, and problem-solving. I adhere to AGILE methodologies, prioritize clean code practices, and champion user-centric design principles.
+        </p>
 
-        <strong>Philosophy and Approach:</strong>
-        <p>I approach web development with a commitment to [mention any principles or approaches you adhere to, e.g., clean code, user-centric design].</p>
+        <p>
+          Some of my notable projects include Round on Me and Reader's Reference, with more on the horizon. These experiences have not only refined my technical prowess but also allowed me to contribute to meaningful solutions.
+        </p>
 
-        <strong>Projects:</strong>
-        <p>Some of my notable projects include [briefly describe a few key projects]. These experiences have not only enhanced my technical skills but also allowed me to contribute to impactful solutions.</p>
+        <p>
+          In acknowledgment of my willingness to share personal experiences, I'm proud to have received the Dale Carnegie Breakthrough Award.
+        </p>
 
-        <strong>Achievements:</strong>
-        <p>I'm proud to have [mention any awards or recognition] in acknowledgment of my contributions to the web development realm.</p>
+        <p>
+          Colleagues and clients have praised my attention to detail, innovative thinking, and dedication to customer satisfaction.
+        </p>
 
-        <strong>Testimonials or Quotes:</strong>
-        <p>Colleagues and clients have commended my [mention specific qualities or achievements]. One client even remarked, "[insert a brief, positive quote]."</p>
+        <p>
+          Beyond coding, I find joy in playing squash and tennis, engaging in home improvement projects, volunteering, working on cars, creating art, and exploring new destinations. These interests enrich my perspective and creativity in my work.
+        </p>
 
-        <strong>Personal Touch:</strong>
-        <p>Beyond coding, I [mention any hobbies or interests related to web development] which bring a unique perspective to my work.</p>
+        <p>
+          Feel free to connect with me via this site's contact page or through LinkedIn, phone, or email (details available on my resume). I'm always open to connecting with fellow enthusiasts, potential collaborators, or anyone keen on discussing web development.
+        </p>
 
-        <strong>Contact Information:</strong>
-        <p>Feel free to reach out to me via [provide email address, LinkedIn profile, or other contact details]. I'm always open to connecting with fellow enthusiasts, potential collaborators, or anyone interested in discussing web development.</p>
+        <p>
+          For a comprehensive overview of my background and projects, please refer to my resume and portfolio.
+        </p>
 
-        <strong>Resume and Portfolio Link:</strong>
-        <p>For a more detailed overview of my background and projects, please visit my resume and portfolio.</p>
+        <p>
+          Whether you're interested in collaborating on exciting projects, exploring job opportunities, or simply discussing web development trends, I'd be delighted to hear from you. Let's connect and create something extraordinary together!
+        </p>
 
-        <strong>Call to Action:</strong>
-        <p>Whether you're looking to collaborate on exciting projects, explore job opportunities, or simply discuss web development trends, I'd love to hear from you. Let's connect and create something extraordinary together!</p>
+        <p style={{ textAlign: 'center' }}>
+          <div>“On your way to greatness, you will fall, but like a Phoenix rising from the ashes, you too shall rise again.”</div>
+          <div>― Michael Bassey Johnson , Night of a Thousand Thoughts</div>
+        </p>
+
       </p>
     </div>
   );

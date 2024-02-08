@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -16,6 +15,14 @@ export default function SignUp() {
       password: data.get('password'),
     });
   };
+
+  // Configuration for each text field
+  const fields = [
+    { name: 'firstName', label: 'First Name', autoComplete: 'given-name', autoFocus: true },
+    { name: 'lastName', label: 'Last Name', autoComplete: 'family-name' },
+    { name: 'email', label: 'Email Address', autoComplete: 'email' },
+    { name: 'message', label: 'Message', multiline: true },
+  ];
 
   return (
     <Container component="main" maxWidth="xs">
@@ -33,62 +40,56 @@ export default function SignUp() {
             <p>Have a question, want to collaborate, or just chat about all things web development? I'd love to hear from you!</p>
             <p>Feel free to drop me a message using the form below or connect through my email and LinkedIn which can be found on my resume.</p>
             <p>Your thoughts and inquiries are always welcome, and I'll do my best to respond promptly. Let's start a conversation and explore the exciting possibilities together!</p>
-        </div>
-      </Typography>
-      <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6}>
-            <TextField className="form-field"
-              autoComplete="given-name"
-              name="firstName"
-              required
-              fullWidth
-              id="firstName"
-              label="First Name"
-              autoFocus
-            />
+          </div>
+        </Typography>
+        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Grid container spacing={2}>
+            {fields.map(field => (
+              <Grid item xs={12} sm={(field.name === 'message' || field.name === 'email') ? 12 : 6} key={field.name} sx={{
+                '&:focus-within': {
+                  '& .MuiOutlinedInput-root': {
+                    '& fieldset': { borderColor: '#800000' }
+                  },
+                  '& .MuiInputLabel-root': {
+                    color: '#800000'
+                  }
+                }
+              }}>
+                <TextField
+                  className="form-field"
+                  required
+                  fullWidth
+                  id={field.name}
+                  label={field.label}
+                  name={field.name}
+                  autoComplete={field.autoComplete}
+                  autoFocus={field.autoFocus}
+                  multiline={field.multiline || false} // Setting multiline to true for the message field
+                  rows={4} // Setting initial number of rows
+                />
+              </Grid>
+            ))}
           </Grid>
-          <Grid item xs={12} sm={6}>
-            <TextField className="form-field"
-              required
-              fullWidth
-              id="lastName"
-              label="Last Name"
-              name="lastName"
-              autoComplete="family-name"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField className="form-field"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-            />
-          </Grid>
-          <Grid item xs={12}>
-            <TextField className="form-field"
-              required
-              fullWidth
-              name="message"
-              label="Message"
-              type="message"
-              id="message"
-            />
-          </Grid>
-        </Grid>
-        <Button className="submit-btn"
-          type="submit"
-          fullWidth
-          variant="contained"
-          sx={{ mt: 3, mb: 2 }}
-        >
-          Send Inquiry
-        </Button>
+          <Button
+            className="submit-btn"
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{
+              mt: 3,
+              mb: 2,
+              bgcolor: '#800000',
+              color: '#D3D3D3',
+              '&:hover': {
+                bgcolor: "rgb(219, 180, 51)",
+                color: 'BLACK'
+              }
+            }}
+          >
+            Send Inquiry
+          </Button>
+        </Box>
       </Box>
-    </Box>
     </Container >
   );
 }

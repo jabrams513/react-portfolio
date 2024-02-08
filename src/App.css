@@ -15,7 +15,7 @@ body {
   background-image: url('./assets/images/Firebird.jpg');
   background-size: 71%;
   background-position: center;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
   background-blend-mode: overlay;
   /* background-repeat: no-repeat; */
 }
@@ -54,7 +54,7 @@ footer {
 .prof-img {
   height: 150px;
   width: auto;
-  /* object-fit: contain; */
+  object-fit: contain;
   float: left;
   margin-right: 10px;
   border-radius: 50%;
