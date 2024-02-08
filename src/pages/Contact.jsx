@@ -20,6 +20,7 @@ const theme = createTheme({
 export default function Contact() {
   const [emailError, setEmailError] = React.useState(false); // State to track email validation error
   const [emptyFields, setEmptyFields] = React.useState([]); // State to track empty fields
+  const [formSubmitted, setFormSubmitted] = React.useState(false); // State to track form submission status
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -49,11 +50,15 @@ export default function Contact() {
         setEmailError(false);
       }
       
+      // Reset form submission status
+      setFormSubmitted(false);
+      
       return; // Stop form submission if any field is empty or if email is not valid
     } else {
-      // Reset empty fields state and email error state if the form is valid
+      // Reset empty fields state, email error state, and set form submission status to true if the form is valid
       setEmptyFields([]);
       setEmailError(false);
+      setFormSubmitted(true);
 
       console.log({
         email: email,
@@ -139,9 +144,15 @@ export default function Contact() {
             >
               Send Inquiry
             </Button>
+            {formSubmitted && (
+              <Typography variant="body1" align="center" sx={{ mt: 2, color: 'green' }}>
+                Your inquiry has been submitted successfully!
+              </Typography>
+            )}
           </Box>
         </Box>
       </Container>
     </ThemeProvider>
   );
 }
+gh
