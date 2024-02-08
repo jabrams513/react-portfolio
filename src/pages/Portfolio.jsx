@@ -1,7 +1,7 @@
 export default function Portfolio() {
   return (
     <div>
-      <h1>Portfolio Page</h1>
+      <h1>Portfolio</h1>
       <p>
         <p>Welcome to my portfolio, where pixels meet purpose and innovation transforms into code. Below are some selected projects that showcase my skills, creativity, and commitment to delivering exceptional web solutions.</p>
 
