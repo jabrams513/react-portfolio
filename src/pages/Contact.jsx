@@ -81,7 +81,6 @@ export default function Contact() {
               ))}
             </Grid>
             <Button
-              className="submit-btn"
               type="submit"
               fullWidth
               variant="contained"
