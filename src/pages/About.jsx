@@ -1,4 +1,4 @@
-import JAProfPic from '../assets/JAProfPic.jpeg';
+import JAProfPic from '../assets/images/JAProfPic.jpeg';
 
 export default function About() {
   return (

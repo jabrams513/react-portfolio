@@ -7,15 +7,9 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import JAProfPic from '../assets/JAProfPic.jpeg';
-import Phoenix from '../assets/Phoenix.jpg'
 import { NavLink, useLocation } from 'react-router-dom';
-import { green } from '@mui/material/colors';
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -44,7 +38,6 @@ function ResponsiveAppBar() {
     <AppBar position="static" sx={{ background: "#800000" }}>
       <Container maxWidth="xxl">
         <Toolbar disableGutters>
-          {/* <Avatar alt="Phoenix" src={Phoenix} sx={{ mr: 2 }} /> */}
           <Typography
             noWrap
             sx={{
