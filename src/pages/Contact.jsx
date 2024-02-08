@@ -47,7 +47,7 @@ export default function Contact() {
           }}
         >
           <div>
-            <h1>Contact</h1>
+            <h1 style={{ textAlign: 'center' }}>Contact</h1>
             <p>Have a question, want to collaborate, or just chat about all things web development? I'd love to hear from you!</p>
             <p>Feel free to drop me a message using the form below or connect through my email and LinkedIn which can be found on my resume.</p>
             <p>Your thoughts and inquiries are always welcome, and I'll do my best to respond promptly. Let's start a conversation and explore the exciting possibilities together!</p>
