@@ -13,26 +13,23 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
   };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  const location = useLocation();
 
-  const styles = { navLinks: { textDecoration: "none", fontFamily: "Oswald" }, menuLinks: { textDecoration: "none", color: "#800000", fontFamily: "Oswald" } }
-
-  const location = useLocation()
+  const routes = [
+    { path: "/", label: "About" },
+    { path: "/portfolio", label: "Portfolio" },
+    { path: "/resume", label: "Resume" },
+    { path: "/contact", label: "Contact" }
+  ];
 
   return (
     <AppBar position="static" sx={{ background: "#800000" }}>
@@ -83,22 +80,13 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'flex' },
               }}
             >
-              <NavLink style={styles.menuLinks} to="/"><MenuItem onClick={handleCloseNavMenu}>
-                <Typography sx={{ fontFamily: "Oswald" }} textAlign="center">About</Typography>
-              </MenuItem>
-              </NavLink>
-              <NavLink style={styles.menuLinks} to="/portfolio"><MenuItem onClick={handleCloseNavMenu}>
-                <Typography sx={{ fontFamily: "Oswald" }} textAlign="center">Portfolio</Typography>
-              </MenuItem>
-              </NavLink>
-              <NavLink style={styles.menuLinks} to="/resume"><MenuItem onClick={handleCloseNavMenu}>
-                <Typography sx={{ fontFamily: "Oswald" }} textAlign="center">Resume</Typography>
-              </MenuItem>
-              </NavLink>
-              <NavLink style={styles.menuLinks} to="/contact"><MenuItem onClick={handleCloseNavMenu}>
-                <Typography sx={{ fontFamily: "Oswald" }} textAlign="center">Contact</Typography>
-              </MenuItem>
-              </NavLink>
+              {routes.map(route => (
+                <NavLink key={route.path} style={{ textDecoration: "none", color: "#800000", fontFamily: "Oswald" }} to={route.path}>
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography sx={{ fontFamily: "Oswald" }} textAlign="center">{route.label}</Typography>
+                  </MenuItem>
+                </NavLink>
+              ))}
             </Menu>
           </Box>
           <Typography
@@ -118,31 +106,22 @@ function ResponsiveAppBar() {
             Jonathan Stark Abrams
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: "flex-end" }}>
-            <NavLink style={styles.navLinks} className= {({isActive}) => (isActive ? "active" : "")} to="/"><Button className= "link-btn"
-              onClick={handleCloseNavMenu}
-              sx={{ fontFamily: "Oswald", my: 2, color: 'white', display: 'block' }}
-            > About
-            </Button></NavLink>
-            <NavLink style={styles.navLinks} className= {({isActive}) => (isActive ? "active" : "")} to="/portfolio"><Button className= "link-btn"
-              onClick={handleCloseNavMenu}
-              sx={{ fontFamily: "Oswald", my: 2, color: 'white', display: 'block' }}
-            > Portfolio
-            </Button></NavLink>
-            <NavLink style={styles.navLinks} className= {({isActive}) => (isActive ? "active" : "")} to="/resume"><Button className= "link-btn"
-              onClick={handleCloseNavMenu}
-              sx={{ fontFamily: "Oswald", my: 2, color: 'white', display: 'block' }}
-            > Resume
-            </Button></NavLink>
-            <NavLink style={styles.navLinks} className= {({isActive}) => (isActive ? "active" : "")} to="/contact"><Button className= "link-btn"
-              onClick={handleCloseNavMenu}
-              sx={{ fontFamily: "Oswald", my: 2, color: 'white', display: 'block' }}
-            > Contact
-            </Button></NavLink>
+            {routes.map(route => (
+              <NavLink key={route.path} style={{ textDecoration: "none", color: "#ffffff", fontFamily: "Oswald" }} to={route.path}>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  className={location.pathname === route.path ? "active link-btn" : "link-btn"}
+                  sx={{ fontFamily: "Oswald", my: 2, color: 'white', display: 'block' }}
+                >
+                  {route.label}
+                </Button>
+              </NavLink>
+            ))}
           </Box>
-
         </Toolbar>
       </Container>
     </AppBar>
   );
 }
+
 export default ResponsiveAppBar;
