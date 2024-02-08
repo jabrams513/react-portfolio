@@ -1,22 +1,24 @@
 import { useState } from "react";
 import { pdfjs, Document, Page } from "react-pdf";
-import PDF from "../assets/AbramsResume.pdf"
+import PDF from "../assets/AbramsResume.pdf";
+
 export default function Resume() {
   pdfjs.GlobalWorkerOptions.workerSrc = new URL(
     "pdfjs-dist/build/pdf.worker.min.js",
     import.meta.url
   ).toString();
+
   const maxWidth = 800;
   const [pageNumber, setPageNumber] = useState(1);
   const [numPages, setNumPages] = useState();
-
   const [showPDF, setShowPDF] = useState(true);
   const [containerWidth, setContainerWidth] = useState(window.innerWidth);
+
   const handleDownload = () => {
     fetch(PDF).then((response) => {
       response.blob().then((blob) => {
         const fileURL = URL.createObjectURL(blob);
-        open(fileURL, '_blank')  //alternative to the a link opens embedded adobe viewer
+        open(fileURL, "_blank"); //alternative to the a link opens embedded adobe viewer
         let alink = document.createElement("a");
         alink.href = fileURL;
         alink.download = "AbramsResume.pdf";
@@ -24,6 +26,7 @@ export default function Resume() {
       });
     });
   };
+
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
@@ -34,8 +37,8 @@ export default function Resume() {
 
   return (
     <>
-      <div className="pb-2 mx-5" style={{ textAlign: 'center' }}>
-        <h1 style={{ textAlign: 'center' }} className="pb-2 mx-5">Resume</h1>
+      <div className="pb-2 mx-auto" style={{ maxWidth: '800px', textAlign: 'center' }}>
+        <h1 className="pb-2">Resume</h1>
         <h6>
           Toggle here to view my{" "}
           <a href="#image" onClick={handleClick} className="underline">
@@ -49,9 +52,9 @@ export default function Resume() {
         </a>
       </div>
       {showPDF ? (
-        <div className="mx-5 flex flex-row">
-          <ul className="mx-5">
-            <p className="font-bold"> Front-End Proficiencies</p>
+        <div className="pb-2 mx-auto" style={{ maxWidth: '800px', textAlign: 'center' }}>
+          <ul className="mx-auto">
+            <strong>Front-End Proficiencies</strong>
             <li>HTML</li>
             <li>CSS</li>
             <li>JavaScript</li>
@@ -62,8 +65,8 @@ export default function Resume() {
             <li>MUI</li>
             <li>TailwindCSS</li>
           </ul>
-          <ul className="mx-5 basis-50">
-            <p className="font-bold"> Back-End Proficiencies</p>
+          <ul className="mx-auto">
+            <strong>Back-End Proficiencies</strong>
             <li>Node</li>
             <li>Express</li>
             <li>MySQL & Sequelize</li>
@@ -73,7 +76,7 @@ export default function Resume() {
           </ul>
         </div>
       ) : (
-        <div className="PDFStyle">
+        <div className="PDFStyle mx-auto" style={{ maxWidth: '800px' }}>
           <Document file={PDF} onLoadSuccess={onDocumentLoadSuccess}>
             <Page
               pageNumber={pageNumber}
@@ -86,7 +89,7 @@ export default function Resume() {
               renderTextLayer={false}
             />
           </Document>
-          <p>
+          <p style={{ textAlign: 'center' }}>
             Page {pageNumber} of {numPages}
           </p>
         </div>

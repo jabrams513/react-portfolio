@@ -67,3 +67,7 @@ footer {
 .form-field {
   background-color: #d3d3d3;
 }
+
+ul {
+  list-style-type: none;
+}
