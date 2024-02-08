@@ -34,7 +34,7 @@ export default function Resume() {
 
   return (
     <>
-      <div className="pb-2 mx-5">
+      <div className="pb-2 mx-5" style={{ textAlign: 'center' }}>
         <h1 style={{ textAlign: 'center' }} className="pb-2 mx-5">Resume</h1>
         <h6>
           Toggle here to view my{" "}

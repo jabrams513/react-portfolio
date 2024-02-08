@@ -9,7 +9,7 @@ export default function About() {
         <img className="prof-img" src={JAProfPic} />
       </div>
 
-      <p className="about-text">
+      <p className="about-text pb-2 mx-5">
 
         <p>
           Greetings! I'm Jonathan Abrams, a passionate web developer dedicated to crafting seamless and innovative digital experiences.
