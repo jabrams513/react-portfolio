@@ -18,13 +18,50 @@ const theme = createTheme({
 });
 
 export default function Contact() {
+  const [emailError, setEmailError] = React.useState(false); // State to track email validation error
+  const [emptyFields, setEmptyFields] = React.useState([]); // State to track empty fields
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const email = data.get('email');
+    let emptyFieldsArray = [];
+
+    // Check for empty fields
+    for (const [key, value] of data.entries()) {
+      if (value === '') {
+        emptyFieldsArray.push(key);
+      }
+    }
+
+    // Email validation using regular expression
+    const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    // Check if any field is empty or if email is not valid
+    if (emptyFieldsArray.length > 0 || !isValidEmail) {
+      // Set empty fields state
+      setEmptyFields(emptyFieldsArray);
+      
+      // Set email error state if email is not valid
+      if (!isValidEmail) {
+        setEmailError(true);
+      } else {
+        setEmailError(false);
+      }
+      
+      return; // Stop form submission if any field is empty or if email is not valid
+    } else {
+      // Reset empty fields state and email error state if the form is valid
+      setEmptyFields([]);
+      setEmailError(false);
+
+      console.log({
+        email: email,
+        password: data.get('password'),
+      });
+
+      // You can proceed with form submission or any other action here
+    }
   };
 
   // Configuration for each text field
@@ -75,6 +112,12 @@ export default function Contact() {
                     autoFocus={field.autoFocus}
                     multiline={field.multiline || false} // Setting multiline to true for the message field
                     rows={4} // Setting initial number of rows
+                    error={(field.name === 'email' && emailError) || (emptyFields.includes(field.name))} // Show error if the field is email and emailError is true, or if the field is empty
+                    helperText={
+                      (field.name === 'email' && emailError) ? 'Please enter a valid email address' :
+                      (emptyFields.includes(field.name) && field.name !== 'email') ? 'This field is required' :
+                      null
+                    } // Error message for email field or empty field
                   />
                 </Grid>
               ))}
@@ -98,7 +141,7 @@ export default function Contact() {
             </Button>
           </Box>
         </Box>
-      </Container >
+      </Container>
     </ThemeProvider>
   );
 }
