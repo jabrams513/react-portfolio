@@ -1,8 +1,15 @@
+import JAProfPic from '../assets/JAProfPic.jpeg';
+
 export default function About() {
   return (
     <div>
       <h1>About Page</h1>
-      <p>
+
+      <div className="img-container">
+        <img className="prof-img" src={JAProfPic} />
+      </div>
+
+      <p className="about-text">
         <strong>Introduction:</strong>
         <p>Greetings! I'm Jonathan Abrams, a passionate web developer dedicated to creating seamless and innovative digital experiences.</p>
 

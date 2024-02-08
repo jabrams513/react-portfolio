@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import JAProfPic from '../assets/JAProfPic.jpeg';
 import Phoenix from '../assets/Phoenix.jpg'
-import { Link } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { green } from '@mui/material/colors';
 
 function ResponsiveAppBar() {
@@ -37,6 +37,8 @@ function ResponsiveAppBar() {
   };
 
   const styles = { navLinks: { textDecoration: "none", fontFamily: "Oswald" }, menuLinks: { textDecoration: "none", color: "#800000", fontFamily: "Oswald" } }
+
+  const location = useLocation()
 
   return (
     <AppBar position="static" sx={{ background: "#800000" }}>
@@ -88,25 +90,24 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'flex' },
               }}
             >
-              <Link style={styles.menuLinks} to="/"><MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">About</Typography>
+              <NavLink style={styles.menuLinks} to="/"><MenuItem onClick={handleCloseNavMenu}>
+                <Typography sx={{ fontFamily: "Oswald" }} textAlign="center">About</Typography>
               </MenuItem>
-              </Link>
-              <Link style={styles.menuLinks} to="/portfolio"><MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">Portfolio</Typography>
+              </NavLink>
+              <NavLink style={styles.menuLinks} to="/portfolio"><MenuItem onClick={handleCloseNavMenu}>
+                <Typography sx={{ fontFamily: "Oswald" }} textAlign="center">Portfolio</Typography>
               </MenuItem>
-              </Link>
-              <Link style={styles.menuLinks} to="/resume"><MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">Resume</Typography>
+              </NavLink>
+              <NavLink style={styles.menuLinks} to="/resume"><MenuItem onClick={handleCloseNavMenu}>
+                <Typography sx={{ fontFamily: "Oswald" }} textAlign="center">Resume</Typography>
               </MenuItem>
-              </Link>
-              <Link style={styles.menuLinks} to="/contact"><MenuItem onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">Contact</Typography>
+              </NavLink>
+              <NavLink style={styles.menuLinks} to="/contact"><MenuItem onClick={handleCloseNavMenu}>
+                <Typography sx={{ fontFamily: "Oswald" }} textAlign="center">Contact</Typography>
               </MenuItem>
-              </Link>
+              </NavLink>
             </Menu>
           </Box>
-          {/* <Avatar alt="Phoenix" src={Phoenix} sx={{ mr: 2 }} /> */}
           <Typography
             noWrap
             sx={{
@@ -124,34 +125,28 @@ function ResponsiveAppBar() {
             Jonathan Stark Abrams
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: "flex-end" }}>
-            <Link style={styles.navLinks} to="/"><Button
+            <NavLink style={styles.navLinks} className= {({isActive}) => (isActive ? "active" : "")} to="/"><Button className= "link-btn"
               onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+              sx={{ fontFamily: "Oswald", my: 2, color: 'white', display: 'block' }}
             > About
-            </Button></Link>
-            <Link style={styles.navLinks} to="/portfolio"><Button
+            </Button></NavLink>
+            <NavLink style={styles.navLinks} className= {({isActive}) => (isActive ? "active" : "")} to="/portfolio"><Button className= "link-btn"
               onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+              sx={{ fontFamily: "Oswald", my: 2, color: 'white', display: 'block' }}
             > Portfolio
-            </Button></Link>
-            <Link style={styles.navLinks} to="/resume"><Button
+            </Button></NavLink>
+            <NavLink style={styles.navLinks} className= {({isActive}) => (isActive ? "active" : "")} to="/resume"><Button className= "link-btn"
               onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+              sx={{ fontFamily: "Oswald", my: 2, color: 'white', display: 'block' }}
             > Resume
-            </Button></Link>
-            <Link style={styles.navLinks} to="/contact"><Button
+            </Button></NavLink>
+            <NavLink style={styles.navLinks} className= {({isActive}) => (isActive ? "active" : "")} to="/contact"><Button className= "link-btn"
               onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: 'white', display: 'block' }}
+              sx={{ fontFamily: "Oswald", my: 2, color: 'white', display: 'block' }}
             > Contact
-            </Button></Link>
+            </Button></NavLink>
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              </IconButton>
-            </Tooltip>
-          </Box>
         </Toolbar>
       </Container>
     </AppBar>

@@ -46,3 +46,28 @@ footer {
   justify-content: center;
   color: #D3D3D3;
 }
+
+.active .link-btn {
+  color: rgb(219, 180, 51);
+}
+
+.prof-img {
+  height: 150px;
+  width: auto;
+  /* object-fit: contain; */
+  float: left;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.about-text {
+  padding: 5px 5px 5px 5px;
+}
+
+.form-field {
+  background-color: white;
+}
+
+/* .submit-btn {
+  background-color: #800000;
+} */
