@@ -8,15 +8,23 @@ import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import * as projects from '../assets'
+import * as projects from '../assets';
+
+const CustomCard = styled(Card)(({ theme }) => ({
+  backgroundColor: '#d3d3d3', // Grey background color
+  color: 'black', // Black text color
+  marginBottom: theme.spacing(2), // Add space between cards
+  width: '100%', // Set a fixed height for all cards
+}));
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
+  color: 'black', // Black icon color
   transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
   marginLeft: 'auto',
   transition: theme.transitions.create('transform', {
@@ -24,58 +32,66 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
+const CardsContainer = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center', // Center horizontally
+});
+
 export default function Project({ project }) {
   const [expanded, setExpanded] = React.useState(false);
 
-  const { title, description, github, deployed, image, stack } = project
+  const { title, description, github, deployed, image, stack } = project;
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardHeader
-        action={
-          <IconButton aria-label="settings">
-          </IconButton>
-        }
-        title={title}
-      />
-      <CardMedia
-        component="img"
-        height="194"
-        image={projects[image]}
-        alt={description}
-      />
-      <CardContent>
-        <Typography variant="body2" color="text.secondary">
-          {stack}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
-      </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+    <CardsContainer>
+      <CustomCard sx={{ maxWidth: 345 }}>
+        <CardHeader
+          action={
+            <IconButton aria-label="settings">
+            </IconButton>
+          }
+          title={title}
+        />
+        <CardMedia
+          component="img"
+          height="194"
+          image={projects[image]}
+          alt={description}
+        />
         <CardContent>
-          <Typography paragraph>
-            {description}
+          <Typography variant="body2" color="text.secondary">
+            {stack}
           </Typography>
         </CardContent>
-      </Collapse>
-    </Card>
+        <CardActions disableSpacing>
+          <IconButton aria-label="github">
+            <GitHubIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton>
+          <ExpandMore
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </ExpandMore>
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph>
+              {description}
+            </Typography>
+          </CardContent>
+        </Collapse>
+      </CustomCard>
+    </CardsContainer>
   );
 }
