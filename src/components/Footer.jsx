@@ -1,9 +1,9 @@
 export default function Footer() {
     const defaultStyles = { color: "#d3d3d3", margin: "0 10px 0 10px", height: "15px" };
-    const goldStyles = { color: "gold" };
+    const goldStyles = { color: "rgb(219, 180, 51)" };
 
     const handleMouseOver = (e) => {
-        e.currentTarget.style.color = "gold";
+        e.currentTarget.style.color = "rgb(219, 180, 51)";
     };
 
     const handleMouseOut = (e) => {
