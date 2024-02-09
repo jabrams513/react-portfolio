@@ -1,2 +1,5 @@
-export {default as pic} from "./projects/NYC.jpg"
-export {default as pic1} from "./projects/Profile.jpg"
+export {default as pic1} from "./projects/pic1.png"
+export {default as pic2} from "./projects/pic2.png"
+export {default as pic3} from "./projects/pic3.png"
+export {default as pic4} from "./projects/pic4.png"
+export {default as pic5} from "./projects/pic5.png"

@@ -44,6 +44,10 @@ const CardsContainer = styled('div')({
   alignItems: 'center', // Center horizontally
 });
 
+const TitleWrapper = styled('div')({
+  textAlign: 'center',
+});
+
 export default function Project({ project }) {
   const [expanded, setExpanded] = React.useState(true); // Expanded by default
 
@@ -57,13 +61,11 @@ export default function Project({ project }) {
     <ThemeProvider theme={theme}>
       <CardsContainer>
         <CustomCard sx={{ maxWidth: 345 }}>
-          <CardHeader
-            action={
-              <IconButton aria-label="settings">
-              </IconButton>
-            }
-            title={title}
-          />
+          <TitleWrapper> {/* Wrapper to center the title */}
+            <CardHeader
+              title={title}
+            />
+          </TitleWrapper>
           <CardMedia
             component="img"
             height="194"
