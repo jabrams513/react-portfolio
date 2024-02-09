@@ -1,9 +1,18 @@
+import Project from '../components/Project'
+
 export default function Portfolio() {
+  const projects = [{ title: "Title", description: "Description", github: "Link", deployed: "Link", image: "pic", stack: "Stack" },
+  { title: "Title2", description: "Description", github: "Link", deployed: "Link", image: "pic1", stack: "Stack" }]
   return (
     <div>
       <h1 style={{ textAlign: 'center' }} className="pb-2 mx-5">Portfolio</h1>
       <p className="pb-2 mx-5">
         <p>Welcome to my portfolio, where pixels meet purpose and innovation transforms into code. Below are some selected projects that showcase my skills, creativity, and commitment to delivering exceptional web solutions.</p>
+
+      {projects.map(project => (
+        <Project project= {project} key= {`project-${project.title}`}/>
+      ))}
+
 
         <strong>Project Name 1: [Provide a brief project name]</strong>
         <p>Description: [Briefly describe the project, its goals, and your role. Highlight any unique challenges or solutions.]</p>
