@@ -21,6 +21,12 @@ export default function Contact() {
   const [emailError, setEmailError] = React.useState(false); // State to track email validation error
   const [emptyFields, setEmptyFields] = React.useState([]); // State to track empty fields
   const [formSubmitted, setFormSubmitted] = React.useState(false); // State to track form submission status
+  const [formData, setFormData] = React.useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: ''
+  });
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -65,6 +71,14 @@ export default function Contact() {
         password: data.get('password'),
       });
 
+      // Clear form fields
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        message: ''
+      });
+
       // You can proceed with form submission or any other action here
     }
   };
@@ -76,6 +90,14 @@ export default function Contact() {
     { name: 'email', label: 'Email Address', autoComplete: 'email' },
     { name: 'message', label: 'Message', multiline: true },
   ];
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
 
   return (
     <ThemeProvider theme={theme}>
@@ -123,6 +145,8 @@ export default function Contact() {
                       (emptyFields.includes(field.name) && field.name !== 'email') ? 'This field is required' :
                       null
                     } // Error message for email field or empty field
+                    value={formData[field.name]}
+                    onChange={handleInputChange}
                   />
                 </Grid>
               ))}
