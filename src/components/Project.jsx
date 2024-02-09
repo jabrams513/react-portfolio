@@ -70,10 +70,14 @@ export default function Project({ project }) {
         </CardContent>
         <CardActions disableSpacing>
           <IconButton aria-label="github">
-            <GitHubIcon />
+            <a href={github} target="_blank" rel="noopener noreferrer">
+              <GitHubIcon />
+            </a>
           </IconButton>
           <IconButton aria-label="share">
-            <ShareIcon />
+            <a href={deployed} target="_blank" rel="noopener noreferrer">
+              <ShareIcon />
+            </a>
           </IconButton>
           <ExpandMore
             expand={expanded}
