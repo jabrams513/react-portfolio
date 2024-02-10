@@ -53,7 +53,7 @@ export default function Resume() {
       </div>
       {showPDF ? (
         <div className="pb-2 mx-auto" style={{ maxWidth: '800px', textAlign: 'center' }}>
-          <ul className="mx-auto">
+          <ul className="mx-auto" style={{ lineHeight: '2', padding: 0, margin: '0 auto' }}>
             <strong>Front-End Proficiencies</strong>
             <li>HTML</li>
             <li>CSS</li>
@@ -65,7 +65,7 @@ export default function Resume() {
             <li>MUI</li>
             <li>TailwindCSS</li>
           </ul>
-          <ul className="mx-auto">
+          <ul className="mx-auto" style={{ lineHeight: '2', padding: 0, margin: '0 auto' }}>
             <strong>Back-End Proficiencies</strong>
             <li>Node</li>
             <li>Express</li>
