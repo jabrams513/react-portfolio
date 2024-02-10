@@ -108,7 +108,7 @@ function ResponsiveAppBar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: "flex-end" }}>
             {routes.map(route => (
-              <NavLink key={route.path} style={{ textDecoration: "none", color: "#ffffff", fontFamily: "Oswald" }} to={route.path}>
+              <NavLink key={route.path} style={{ textDecoration: "none", color: "#d3d3d3", fontFamily: "Oswald" }} to={route.path}>
                 <Button
                   onClick={handleCloseNavMenu}
                   className={location.pathname === route.path ? "active link-btn" : "link-btn"}
