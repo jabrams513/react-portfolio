@@ -53,7 +53,7 @@ footer {
 }
 
 .active .link-btn {
-  color: rgb(219, 180, 51);
+  color: rgb(219, 180, 51) !important;
 }
 
 .prof-img {

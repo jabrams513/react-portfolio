@@ -83,7 +83,7 @@ function ResponsiveAppBar() {
             >
               {routes.map(route => (
                 <NavLink key={route.path} style={{ textDecoration: "none", color: "#800000", fontFamily: "Oswald" }} to={route.path}>
-                  <MenuItem onClick={handleCloseNavMenu}>
+                  <MenuItem onClick={handleCloseNavMenu} className={location.pathname === route.path ? "active link-btn" : "link-btn"}>
                     <Typography sx={{ fontFamily: "Oswald" }} textAlign="center">{route.label}</Typography>
                   </MenuItem>
                 </NavLink>
