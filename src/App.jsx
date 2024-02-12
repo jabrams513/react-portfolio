@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Nav from './components/NavTabs';
 import "./App.css"
 import Footer from './components/Footer';
-import Phoenix from '../public/Firebird.jpg'
+import Phoenix from '/Firebird.jpg'
 
 function App() {
   const styles = { background: Phoenix }
