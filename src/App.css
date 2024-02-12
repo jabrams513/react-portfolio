@@ -12,7 +12,7 @@ body,
 }
 
 body {
-  background-image: url('/Firebird.jpg');
+  background-image: url('assets/images/Firebird.jpg');
   background-size: 100%;
   background-position: center;
   background-color: rgba(255, 255, 255, 0.75);
