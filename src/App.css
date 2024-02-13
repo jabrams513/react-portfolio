@@ -12,16 +12,16 @@ body,
 }
 
 body {
-  background-image: url('assets/images/Firebird.jpg');
+  background-image: url('/Firebird.jpg') !important;
   background-size: 100%;
   background-position: center;
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.75) !important;
   background-blend-mode: overlay;
   /* background-repeat: no-repeat; */
 }
 
 a {
-  color: #800000;
+  color: #800000 !important;
   text-decoration: none;
 }
 
