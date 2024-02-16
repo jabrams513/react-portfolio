@@ -3,7 +3,7 @@ import Project from '../components/Project';
 export default function Portfolio() {
   const projects = [
     { title: "Round on Me", description: "Golfers look for games can connect with one another", github: "https://github.com/jabrams513/round-on-me", deployed: "https://round-on-me-d919eb5aa07c.herokuapp.com/", image: "pic1", stack: "Stack" },
-    { title: "Food Truck Depot", description: "At the truck depot eaters meet feeders", github: "https://github.com/jabrams513/food-truck-depot", deployed: "Link", image: "pic2", stack: "Stack" },
+    { title: "Food Truck Depot", description: "At the truck depot eaters meet feeders", github: "https://github.com/jabrams513/food-truck-depot", deployed: "https://food-truck-depot-f6cf44227d19.herokuapp.com/", image: "pic2", stack: "Stack" },
     { title: "Weather Forecast", description: "Punxsutawney Phil's worst nightmare", github: "https://github.com/jabrams513/five-day-weather-forecast", deployed: "https://jabrams513.github.io/five-day-weather-forecast/", image: "pic3", stack: "Stack" },
     { title: "Reader's Reference", description: "For the curious reader", github: "https://github.com/jabrams513/readers-reference", deployed: "https://jabrams513.github.io/readers-reference/", image: "pic4", stack: "Stack" },
     { title: "Global Access", description: "Your partner in exceptional opportunities", github: "Link", deployed: "https://www.globalaccesscsg.com/", image: "pic5", stack: "Stack" },
